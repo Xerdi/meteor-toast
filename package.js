@@ -12,7 +12,7 @@ Package.onUse(function (api) {
         'ecmascript',
         'blaze-html-templates@1.2.1',
         'ostrio:flow-router-extra@3.9.0',
-        'xerdi:admin-lte@0.0.5'
+        'xerdi:admin-lte@0.0.4'
     ]);
     api.mainModule('toasts.js', 'client');
 });
