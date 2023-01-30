@@ -27,7 +27,7 @@ const toast = new Toast({
     createdAt: new Date(),
     close: false,
     body: 'Hi <b>there</b>!',
-    class: 'bg-danger'
+    'class': 'bg-danger'
 });
 
 toast.show();
@@ -35,3 +35,18 @@ toast.hide();
 ```
 
 The toast will be destroyed when hidden.
+
+There are also two short-hands for showing a success message or error message.
+```javascript
+Toast.success('A success message', {title: 'Title override'});
+try {
+    // ... faulty code
+} catch(e) {
+    Toast.error(e);
+    // or
+    Toast.error(e.reason)
+}
+```
+When using these short-hands, the toast will be shown in advance.
+The locale keys of the default titles are `xerdi:toast.errorTitle` and `xerdi:toast.successTitle`.
+

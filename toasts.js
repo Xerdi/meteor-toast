@@ -1,6 +1,10 @@
+import {Meteor} from 'meteor/meteor';
 import {Template} from "meteor/templating";
 import {Blaze} from "meteor/blaze";
+import {i18n} from "meteor/universe:i18n";
 
+import './i18n/en.i18n.json';
+import './i18n/nl.i18n.json';
 import './template';
 
 export class Toast {
@@ -52,6 +56,39 @@ export class Toast {
                 resolve(element.toast('hide'));
             });
         }.bind(this));
+    }
+
+    static success(message, options = undefined) {
+        const opts = options || {};
+
+        return new Toast({
+            title: i18n.__('xerdi:toast.successTitle'),
+            body: message,
+            'class': 'bg-success',
+            ...opts
+        }).show();
+    }
+
+    static error(messageOrObject, options = undefined) {
+        let msg;
+        switch(typeof(messageOrObject)) {
+            case 'string':
+                msg = messageOrObject;
+                break;
+            case 'object':
+                msg = messageOrObject.reason || messageOrObject.message
+        }
+        if (!msg)
+            throw new Meteor.Error('bad argument', 'Wrong argument given.');
+
+        const opts = options || {};
+
+        return new Toast({
+            title: i18n.__('xerdi:toast.errorTitle'),
+            body: msg,
+            'class': 'bg-danger',
+            ...opts
+        }).show();
     }
 }
 
