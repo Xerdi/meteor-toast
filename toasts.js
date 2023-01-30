@@ -9,7 +9,7 @@ import './template';
 
 export class Toast {
 
-    static containerSelector = '.toasts-top-right';
+    static containerSelector = '.toasts';
 
     handle = null;
     element = null;

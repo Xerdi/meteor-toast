@@ -14,7 +14,7 @@ Also see `xerdi:admin-lte` (requirement).
 
 ## Usage
 
-The toast will by default be placed in `.toasts-top-right` which is included in `xerdi:admin-lte`.
+The toast will by default be placed in `.toasts` which is included in `xerdi:admin-lte`.
 To change that you can set `Toast.containerSelector` to your container.
 
 To show a toast, you can do the following:
