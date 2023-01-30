@@ -10,7 +10,7 @@ Package.onUse(function (api) {
     api.versionsFrom('2.8.0');
     api.use([
         'ecmascript',
-        'universe:i18n',
+        'universe:i18n@1.32.6',
         'blaze-html-templates@1.2.1',
         'ostrio:flow-router-extra@3.9.0',
         'xerdi:admin-lte@0.0.4'
