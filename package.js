@@ -1,6 +1,6 @@
 Package.describe({
     name: 'xerdi:toast',
-    version: '0.0.2',
+    version: '0.0.3',
     summary: 'Admin-LTE Toasts for MeteorJS',
     git: '',
     documentation: 'README.md'
